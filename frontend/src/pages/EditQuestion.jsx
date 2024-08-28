@@ -37,7 +37,7 @@ export const EditQuestion = () => {
 
     useEffect(() =>{
         async function fetchMyApi(){
-        await axios.get("http://localhost:3000/api/v1/post/getpost/"+postId)
+        await axios.get("http://13.61.13.191:8080/api/v1/post/getpost/"+postId)
         .then(response => {
             setPost(response.data.post)
             
@@ -71,7 +71,7 @@ export const EditQuestion = () => {
         </div>
         <div className="w-32" ><Button onClick={async()=>{
             
-            await axios.put("http://localhost:3000/api/v1/post/update/"+postId,filteredData,{
+            await axios.put("http://13.61.13.191:8080/api/v1/post/update/"+postId,filteredData,{
                 headers:{
                     Authorization: "Bearer "+ localStorage.getItem("token")
                 }

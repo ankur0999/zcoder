@@ -22,7 +22,7 @@ export const UsersQuestion = () =>{
 
     useEffect(()=>{
         async function fetchMyApi(){
-         await axios.get("http://localhost:3000/api/v1/post/feeds/"+userId)
+         await axios.get("http://13.61.13.191:8080/api/v1/post/feeds/"+userId)
         .then(response=>{
             setFeeds(response.data.feeds)
         })
@@ -52,7 +52,7 @@ function Feed({feed,ChangeState}){
     const navigate = useNavigate();
     const [user, setUser] = useState("");
     useEffect( () => {
-        axios.get("http://localhost:3000/api/v1/user/getuser/"+feed.userId)
+        axios.get("http://13.61.13.191:8080/api/v1/user/getuser/"+feed.userId)
         .then(response => {
             setUser(response.data.user)
         })
@@ -115,7 +115,7 @@ function CheckPublic({feed,ChangeState}){
 
 async function changeVisibilty({feed,ChangeState}){
     
-    await axios.put("http://localhost:3000/api/v1/post/update/"+feed._id,{
+    await axios.put("http://13.61.13.191:8080/api/v1/post/update/"+feed._id,{
             public: !feed.public
         },{
             headers:{

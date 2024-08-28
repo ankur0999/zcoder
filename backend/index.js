@@ -7,4 +7,4 @@ app.use(cors());
 
 app.use(express.json());
 app.use("/api/v1", rootRouter);
-app.listen(3000);
+app.listen(8080);

@@ -60,7 +60,7 @@ export const EditProfile = () =>{
     }
 
     useEffect(()=>{
-        axios.get("http://localhost:3000/api/v1/user/getuser/"+id)
+        axios.get("http://13.61.13.191:8080/api/v1/user/getuser/"+id)
         .then(response=>{
             Setuser(response.data.profile)
         })
@@ -294,7 +294,7 @@ export const EditProfile = () =>{
         />
 
         <Button onClick={async()=>{
-            await axios.put("http://localhost:3000/api/v1/user/update",filteredData,{
+            await axios.put("http://13.61.13.191:8080/api/v1/user/update",filteredData,{
                 headers:{
                     Authorization: "Bearer "+ localStorage.getItem("token")
                 }

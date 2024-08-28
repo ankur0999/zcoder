@@ -12,7 +12,7 @@ export const Posts = () =>{
     const name = searchParams.get("name");
 
     useEffect( () =>{
-        axios.get("http://localhost:3000/api/v1/post/posts")
+        axios.get("http://13.61.13.191:8080/api/v1/post/posts")
        .then(response => {
            setFeeds(response.data.Questions)
        })

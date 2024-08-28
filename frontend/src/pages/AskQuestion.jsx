@@ -55,7 +55,7 @@ export const AskQuestion = () => {
         </div>
         <div className="w-32" ><Button onClick={()=>{
             
-            axios.post("http://localhost:3000/api/v1/post/post",filteredData,{
+            axios.post("http://13.61.13.191:8080/api/v1/post/post",filteredData,{
                 headers:{
                     Authorization: "Bearer "+ localStorage.getItem("token")
                 }

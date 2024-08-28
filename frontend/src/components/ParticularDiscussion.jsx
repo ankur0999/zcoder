@@ -13,7 +13,7 @@ export const ParticularDiscussion = ({discussionId,name}) =>{
    
     useEffect(()=>{
     async function fetchMyApi(){
-        await axios.get("http://localhost:3000/api/v1/user/comment/"+discussionId)
+        await axios.get("http://13.61.13.191:8080/api/v1/user/comment/"+discussionId)
         .then(response=>{
             setComment(response.data.comment)
         })
@@ -26,7 +26,7 @@ export const ParticularDiscussion = ({discussionId,name}) =>{
         <div className="flex ">
         <div className=" text-xl pl-4 font-serif">{name}</div>
         <div className="ml-2"><button onClick={async()=>{
-             await axios.put("http://localhost:3000/api/v1/user/delete/discussion/"+discussionId,{},{
+             await axios.put("http://13.61.13.191:8080/api/v1/user/delete/discussion/"+discussionId,{},{
                 headers:{
                     Authorization: "Bearer " + localStorage.getItem("token")
                 }
@@ -52,7 +52,7 @@ export const ParticularDiscussion = ({discussionId,name}) =>{
                 setText(e.target.value)
             }} placeholder={"do comment"}/></div>
             <div className="mt-3 ml-4"><Button onClick={async ()=>{
-                await axios.post("http://localhost:3000/api/v1/user/comment/"+ discussionId,{
+                await axios.post("http://13.61.13.191:8080/api/v1/user/comment/"+ discussionId,{
                     
                         description: text
                     },{
@@ -75,7 +75,7 @@ function ShowUsers({id}){
     const [users, setUsers] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
     useEffect(()=>{
-        axios.get("http://localhost:3000/api/v1/user/getusers/discussion/"+id)
+        axios.get("http://13.61.13.191:8080/api/v1/user/getusers/discussion/"+id)
         .then(response=>{
               setUsers(response.data.user)
         })

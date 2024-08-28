@@ -22,7 +22,7 @@ export const DiscussionBox = () => {
     
     useEffect(()=>{
         async function fetchMyApi(){
-        await axios.get("http://localhost:3000/api/v1/user/discussions",{
+        await axios.get("http://13.61.13.191:8080/api/v1/user/discussions",{
             headers:{
                 Authorization : "Bearer "+localStorage.getItem("token")
             }
@@ -49,7 +49,7 @@ export const DiscussionBox = () => {
         }} placeholder="Discussion 1" label={"Discussion Name"} />
         <div className="pt-4">
         <Button onClick={async () => {
-            const response = await axios.post("http://localhost:3000/api/v1/user/discussion", {
+            const response = await axios.post("http://13.61.13.191:8080/api/v1/user/discussion", {
               title
             },{
                 headers:{

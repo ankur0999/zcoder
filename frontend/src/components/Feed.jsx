@@ -9,7 +9,7 @@ export const Feed = ({feed}) =>{
     const navigate = useNavigate();
     const [user, setUser] = useState("");
     useEffect( () => {
-        axios.get("http://localhost:3000/api/v1/user/getuser/"+feed.userId)
+        axios.get("http://13.61.13.191:8080/api/v1/user/getuser/"+feed.userId)
         .then(response => {
             setUser(response.data.user)
         })

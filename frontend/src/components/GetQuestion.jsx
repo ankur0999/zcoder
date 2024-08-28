@@ -8,7 +8,7 @@ export const GetQuestion = ({userId}) =>{
     const [feeds, setFeeds] = useState([])
     useEffect(()=>{
         async function fetchMyApi(){
-         await axios.get("http://localhost:3000/api/v1/post/feeds/"+userId)
+         await axios.get("http://13.61.13.191:8080/api/v1/post/feeds/"+userId)
         .then(response=>{
             setFeeds(response.data.feeds)
         })

@@ -31,7 +31,7 @@ export const Particularposts = (props) =>{
     }
     useEffect(() =>{
         async function fetchMyApi(){
-        await axios.get("http://localhost:3000/api/v1/post/getpost/"+postId)
+        await axios.get("http://13.61.13.191:8080/api/v1/post/getpost/"+postId)
         .then(response => {
             setPost(response.data.post)
             setComments(response.data.comment)
@@ -96,7 +96,7 @@ export const Particularposts = (props) =>{
             setReply(e.target.value);
         }}/>
         <div className="flex justify-end mr-12"><button onClick={async () =>{
-            const response = await axios.post("http://localhost:3000/api/v1/post/comment/"+postId , {
+            const response = await axios.post("http://13.61.13.191:8080/api/v1/post/comment/"+postId , {
                 description: reply
             },{
                 headers:{
@@ -168,7 +168,7 @@ function EditComment(props){
             setReply(e.target.value);
         }}  desc={props.description}/>
         <div className="flex justify-end mr-12"><button onClick={async () =>{
-            const response = await axios.put("http://localhost:3000/api/v1/post/comment/update/"+props.commentId , {
+            const response = await axios.put("http://13.61.13.191:8080/api/v1/post/comment/update/"+props.commentId , {
                 description: reply
             },{
                 headers:{

@@ -13,7 +13,7 @@ export const Topbar = () => {
     const [user, setUser] = useState("");
 
     useEffect( () =>{
-        axios.get("http://localhost:3000/api/v1/user/getuser/"+userId)
+        axios.get("http://13.61.13.191:8080/api/v1/user/getuser/"+userId)
        .then(response => {
            setUser(response.data.user)
        })

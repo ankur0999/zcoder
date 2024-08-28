@@ -25,7 +25,7 @@ export const Profile = () =>{
     
     useEffect(()=>{
         async function fetchMyApi(){
-         await axios.get("http://localhost:3000/api/v1/user/getuser/"+id)
+         await axios.get("http://13.61.13.191:8080/api/v1/user/getuser/"+id)
         .then(response=>{
             setProfile(response.data.profile)
         })

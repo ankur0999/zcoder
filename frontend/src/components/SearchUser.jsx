@@ -10,7 +10,7 @@ export const SearchUser = () =>{
     const [filter, setFilter] = useState("")
     
     useEffect(() =>{
-        axios.get("http://localhost:3000/api/v1/user/bulk?filter="+filter)
+        axios.get("http://13.61.13.191:8080/api/v1/user/bulk?filter="+filter)
         .then(response =>{
             setUsers(response.data.user)
         })
@@ -56,7 +56,7 @@ function User({user}){
         </div>
         <div className="flex flex-col justify-center h-ful">
             <Button onClick={async()=>{
-                await axios.put("http://localhost:3000/api/v1/user/discussion/"+user._id+"/"+discussionId)
+                await axios.put("http://13.61.13.191:8080/api/v1/user/discussion/"+user._id+"/"+discussionId)
             }} label={"Invite"} />
         </div>
     </div>
