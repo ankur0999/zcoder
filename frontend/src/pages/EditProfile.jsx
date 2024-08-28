@@ -52,11 +52,11 @@ export const EditProfile = () =>{
       
     }
     const filteredData = Object.fromEntries(
-      Object.entries(data).filter(([key, value]) => value !== null && value !== '' && value !== undefined )
+      Object.entries(data).filter(([key, value]) => value !== null && value !== '' && value !== undefined && value.length !== 0)
     );
 
     function addSkill(){
-        setSkills([...skills, skill])
+        setSkills(skills => [...skills, skill]);
     }
 
     useEffect(()=>{
